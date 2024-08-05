@@ -24,7 +24,7 @@ const registerUser = expressAsyncHandler(async (req, res) => {
         pic
     });
 
-    if (user && (await user.matchPassword(password))) {
+    if (user) {
         res.status(201).json({
             _id: user._id,
             name: user.name,
@@ -40,11 +40,13 @@ const registerUser = expressAsyncHandler(async (req, res) => {
 });
 
 const authUser = expressAsyncHandler(async (req, res) => {
+    console.log("in auth user");
+
     const {email, password} = req.body;
 
     const user = await User.findOne({email});
 
-    if(user) {
+    if(user && (await user.matchPassword(password))) {
         res.json({
             _id: user._id,
             name: user.name,

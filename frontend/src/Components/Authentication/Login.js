@@ -17,6 +17,7 @@ const Login = () => {
     }
 
     const submitHandle = async () => {
+        console.log("in submit handle");
         setLoading(true);
         if(!email || !password) {
             toast({
@@ -31,6 +32,8 @@ const Login = () => {
         }
 
         try {
+            console.log("in try catch");
+
             const config = {
                 headers: {
                     "Content-type": "application/json",
@@ -38,6 +41,7 @@ const Login = () => {
             }
 
             const {data} = await axios.post("/api/user/login", {email, password}, config);
+            console.log("data", data);
 
             toast({
                 title: 'Login successfull',

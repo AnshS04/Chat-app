@@ -21,4 +21,4 @@ app.use('/api/chat', chatRoutes)
 app.use(notFound)
 app.use(errorHandler)
 
-app.listen(5000, console.log("server started"));
+app.listen(5000, console.log("server started on port 5000"));
