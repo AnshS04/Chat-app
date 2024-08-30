@@ -4,19 +4,21 @@ import { Box, Container, Text } from '@chakra-ui/react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import Login from '../Components/Authentication/Login'
 import Signup from '../Components/Authentication/Signup'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+// import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
 
-    const history = useHistory();
+    // const history = useHistory();
+    const navigate = useNavigate()
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("userInfo"));
 
         if(user) {
-            history.push("/chats")
+            navigate("/chats")
         }
-    }, [history]);
+    }, [navigate]);
     
 
     return (
