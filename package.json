@@ -9,11 +9,15 @@
   "author": "Ansh Sachdeva",
   "license": "ISC",
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
+    "framer-motion": "^11.3.31",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.0",
     "mongoose": "^8.3.4"
