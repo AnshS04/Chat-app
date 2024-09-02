@@ -102,7 +102,7 @@ const SideDrawer = () => {
     <>
       <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} bg={"white"} w={"100%"} p={"5px 10px 5px 10px"} borderWidth={"5px"} >
           <Button variant={"ghost"} onClick={onOpen} >
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
             <Text display={{base: "none", md: "flex"}} px={"4"} >Search User</Text>
           </Button>
 
