@@ -22,7 +22,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [typing, setTyping] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
 
-  const { user, selectedChat, setSelectedChat } = ChatState();
+  const { user, selectedChat, setSelectedChat, noti, setNoti } = ChatState();
 
   const toast = useToast();
 
@@ -153,6 +153,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     socket.on("message received", (newMessageReceived) => {
       if(!selectedChatCompare || selectedChatCompare._id !== newMessageReceived.chat._id) {
         // notify
+        if (!noti.includes(newMessageReceived)) {
+          setNoti([newMessageReceived, ...noti]);
+          setFetchAgain(!fetchAgain);
+        }
       }
       else {
         setMessages([...messages, newMessageReceived]);
